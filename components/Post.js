@@ -100,7 +100,6 @@ function Post({ id, username, userImg, img, caption }) {
       {session && (
         <div className="flex justify-between px-4 pt-4">
           <div className="flex space-x-4">
-           
             {hasLiked ? (
               <HeartIconFilled
                 onClick={likePost}
@@ -119,6 +118,9 @@ function Post({ id, username, userImg, img, caption }) {
 
       {/* caption */}
       <p className="p-5 truncate">
+        {likes.length > 0 && (
+          <p className="font-bold mb-1">{likes.length} likes</p>
+        )}
         <span className="font-bold mr-1">{username} </span>
         {caption}
       </p>
